@@ -9,9 +9,9 @@ export const createEvolver = ({
   select,
 }) => () => {
 
-  let counter = 1
+  let counter = 0
 
-  while (counter++) {
+  while (++counter) {
 
     const [ selection, bestFitness, bestProgram ] = select(population)
 
