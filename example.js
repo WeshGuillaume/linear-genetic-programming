@@ -38,6 +38,3 @@ export const numericSolver = definition => {
 
   return [ bestProgram, bestFitness ]
 }
-
-const [ best ] = numericSolver(x => x + 1)
-console.log(toString(best))
