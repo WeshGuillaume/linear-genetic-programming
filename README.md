@@ -5,7 +5,7 @@ Genetic programming is am algorithm that can create code in order to solve a pro
 
 # Asm
 
-For this library, I created a simple stack-base-kind-of-assembly-like language.
+For this library, I created a simple stack-base-kind-of-assembly-like-toy-language.
 
 > push 1 to the number stack
 ```
