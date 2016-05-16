@@ -7,11 +7,13 @@ $> git clone https://github.com/GuillaumeBadi/linear-genetic-programming
 
 $> cd $_
 
+$> npm i
+
 ```
 
 # Setup a basic Algebra problem
 
-``` javascrip
+``` javascript
 
 import { numericSolver } from './example'
 import { toString } from './utils'
