@@ -1,0 +1,43 @@
+times x
+number x
+add 2
+times x
+add
+number 3
+minus
+times
+number 4
+number 3
+minus
+pow 4
+number 3
+minus
+times
+number 4
+number 3
+minus
+times x
+number x
+add 2
+times x
+add
+pow 4
+number 3
+minus
+times
+minus
+times
+number 3
+minus
+minus x
+number x
+number x
+number 4
+number x
+number x
+number x
+number 2
+number x
+add 2
+times x
+add
