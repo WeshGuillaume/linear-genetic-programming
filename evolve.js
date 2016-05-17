@@ -29,8 +29,10 @@ export const createEvolver = ({
 
     const newPopulation = [
       ...selection,
-      ...mutate(selection),
-      ...crossover(selection),
+      ...mutate(population),
+      //...mutate(selection),
+      //...crossover(selection),
+      ...crossover(population),
     ]
 
     while (newPopulation.length < population.length) {

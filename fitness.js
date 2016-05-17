@@ -62,8 +62,8 @@ export const createMathFitness = ({
   evaluate,
 }) =>
   createFitness({
-    dataset: createMathDataset(fn, minDataset, maxDataset),
-    definition: fn,
+    dataset: createMathDataset(definition, minDataset, maxDataset),
+    definition,
     error: (expected, got) => Math.abs(expected - got) * -1,
     evaluate,
   })

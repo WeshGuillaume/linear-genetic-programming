@@ -32,9 +32,12 @@ export const numericSolver = definition => {
     generate: generate,
     population,
     stopWhen: (counter, bestFitness) => counter === 2000 || bestFitness === 0,
-    onIteration: counter => console.log(`Iteration ${counter}`),
+    onIteration: (counter, fitness) => console.log(`Iteration ${counter} : ${fitness}`),
     select: select(30, 20, fitness),
   })()
 
   return [ bestProgram, bestFitness ]
 }
+
+const [ bestProgram ] = numericSolver(x => x * x + 2 * x + 2)
+console.log(bestProgram)

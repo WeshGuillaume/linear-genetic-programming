@@ -23,6 +23,12 @@ export const createParser = (functions, stacks) => (code, params) => {
     .forEach(fn => fn(stacks))
 }
 
+export const createEvaluator = (functions, stacks, ret) => code => params => {
+  const parse = createParser(functions, stacks)
+  parse(code, params)
+  return ret(stacks)
+}
+
 export const evaluate = code => params => {
 
   const num = number(['x'])
