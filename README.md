@@ -1,4 +1,39 @@
 
+# What's this?
+
+Genetic programming is am algorithm that can create code in order to solve a problem. Find out more on wikipedia
+
+# Asm
+
+For this library, I created a simple stack-base-kind-of-assembly-like-toy-language.
+
+> push 1 to the number stack
+```
+number 1
+```
+
+> push the x parameter to the number stack
+```
+number x
+```
+
+> x + 2
+```
+number x
+add 2
+# or
+number 2
+add x
+```
+
+> add the last two elements of the number stack
+> stack is now [ 2 + x ]
+```
+number x
+number 2
+add
+```
+
 # Installation
 
 ```
@@ -7,11 +42,13 @@ $> git clone https://github.com/GuillaumeBadi/linear-genetic-programming
 
 $> cd $_
 
+$> npm i
+
 ```
 
 # Setup a basic Algebra problem
 
-``` javascrip
+``` javascript
 
 import { numericSolver } from './example'
 import { toString } from './utils'
