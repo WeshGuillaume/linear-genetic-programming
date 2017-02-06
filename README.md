@@ -1,4 +1,9 @@
 
+TLDR;
+``` bash
+npm install && node index
+```
+
 # What's this?
 
 Genetic programming is am algorithm that can create code in order to solve a problem. Find out more on wikipedia.
