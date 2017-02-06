@@ -1,7 +1,8 @@
 
 # What's this?
 
-Genetic programming is am algorithm that can create code in order to solve a problem. Find out more on wikipedia
+Genetic programming is am algorithm that can create code in order to solve a problem. Find out more on wikipedia.
+I tried to use a very strict functional style to gain modularity.
 
 # Asm
 

@@ -15,10 +15,10 @@
  *
  * return => {Number}
  */
-const levenshtein = (s1, s2) => {
+const levenshtein = (s, t) => {
 
-  if (!s1.length) { return s2.length }
-  if (!s2.length) { return s1.length }
+  if (!s.length) { return t.length }
+  if (!t.length) { return s.length }
 
   return Math.min(
     levenshtein(s.substr(1), t) + 1,
@@ -29,7 +29,7 @@ const levenshtein = (s1, s2) => {
 
 /*
  * Returns a fitness function that returns the overall program's performance,
- * 
+ *
  * dataset => {Array<{ input, output }>}
  * definition => {Function}
  * error => {Function} used to calculate the distance between the expected value and the actual result
