@@ -1,2 +1,1 @@
-
-export const type = type => fn => Object.assign(fn, { type })
+export const type = type => fn => Object.assign(fn, { type });

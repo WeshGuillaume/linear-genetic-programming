@@ -535,6 +535,11 @@ ms@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
+node-graceful@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/node-graceful/-/node-graceful-2.0.1.tgz#d93e17359e9978ea826939a8434aa6623f123644"
+  integrity sha512-5KBFTSSxRV9Qj/3VnJn7JGJBowjd8RfncVfmEjQrh70Jgjp0qxRZlV82TLCt8zLXHtwaY9/FCM4z+XzdvJRw+A==
+
 number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"

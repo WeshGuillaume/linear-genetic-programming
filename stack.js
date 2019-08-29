@@ -1,38 +1,35 @@
-
 const random = array => () => {
-  return array[Math.floor(Math.random() * array.length)]
-}
+  return array[Math.floor(Math.random() * array.length)];
+};
 
-const createStack = ({
+export const createStack = ({
   initial = [],
   randomParameter,
   serialize = a => a.toString(),
   defaultValue = 0,
-  deserialize = parseInt,
+  deserialize = parseInt
 } = {}) => params => {
-
-  const stack = initial
+  const stack = initial;
 
   return {
-
-    random () {
-      return Math.random() > .5 ? randomParameter() : random(params)()
+    random() {
+      return Math.random() > 0.5 ? randomParameter() : random(params)();
     },
 
-    pop () {
-      return stack.pop() || defaultValue
+    pop() {
+      return stack.pop() || defaultValue;
     },
 
-    push (v) {
-      return stack.push(deserialize(v))
+    push(v) {
+      return stack.push(deserialize(v));
     },
 
-    fetch () {
-      return stack.map(serialize)
-    },
-  }
-}
+    fetch() {
+      return stack.map(serialize);
+    }
+  };
+};
 
 export const number = createStack({
-  randomParameter: random([ 1, 2, 3, 4 ]),
-})
+  randomParameter: random([1, 2, 3, 4])
+});

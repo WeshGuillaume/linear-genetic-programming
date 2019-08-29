@@ -1,43 +1,42 @@
-
-import { mutate } from './mutate'
-import { example as generate } from './generate'
-import { crossover } from './crossover'
-import { createPopulation } from './population'
-import { createMathFitness } from './fitness'
-import { createParser } from './parser'
-import { evaluate } from './parser'
-import { select } from './selection'
-import { toString } from './utils'
-import { createEvolver } from './evolve'
+import { mutate } from './mutate';
+import { example as generate } from './generate';
+import { crossover } from './crossover';
+import { createPopulation } from './population';
+import { createMathFitness } from './fitness';
+import { createParser } from './parser';
+import { evaluate } from './parser';
+import { select2 } from './selection';
+import { toString } from './utils';
+import { createEvolver } from './evolve';
 
 export const numericSolver = definition => {
-
   const fitness = createMathFitness({
     definition,
     minDataset: -10,
     maxDataset: 10,
-    evaluate,
-  })
+    evaluate
+  });
 
   const population = createPopulation({
     depth: 5,
     size: 200,
     fitness,
-    generate,
-  })
+    generate
+  });
 
-  const [ bestProgram, bestFitness ] = createEvolver({
+  const [bestProgram, bestFitness] = createEvolver({
     mutate: mutate(generate),
-    crossover: crossover(10),
+    crossover: crossover(20),
     generate: generate,
     population,
     stopWhen: (counter, bestFitness) => counter === 2000 || bestFitness === 0,
-    onIteration: (counter, fitness) => console.log(`Iteration ${counter} : ${fitness}`),
-    select: select(30, 20, fitness),
-  })()
+    onIteration: (counter, fitness) =>
+      console.log(`Iteration ${counter} : ${fitness}`),
+    select: select2(50, 20, fitness)
+  })();
 
-  return [ bestProgram, bestFitness ]
-}
+  return [bestProgram, bestFitness];
+};
 
-const [ bestProgram ] = numericSolver(x => x * x + 2 * x + 2)
-console.log(bestProgram)
+const [bestProgram] = numericSolver(x => 3 * x * x + 2 * x + 2);
+console.log(bestProgram);

@@ -1,4 +1,3 @@
-
 /*
  * The evolver will be used to combine all genetic operators
  * and loop to evolve the wanted program
@@ -11,6 +10,11 @@
  * onIteration => {Function} called on each evolve iteration
  * select => {Function} used to select the best individuals for the next generation
  */
+
+const random = array => () => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
 export const createEvolver = ({
   mutate,
   generate,
@@ -18,33 +22,34 @@ export const createEvolver = ({
   population,
   stopWhen,
   onIteration,
-  select,
+  select
 }) => () => {
-
-  let counter = 0
+  let counter = 0;
 
   while (++counter) {
-
-    const [ selection, bestFitness, bestProgram ] = select(population)
+    const [selection, bestFitness, bestProgram] = select(population);
 
     const newPopulation = [
+      bestProgram,
       ...selection,
-      ...mutate(population),
-      //...mutate(selection),
-      //...crossover(selection),
-      ...crossover(population),
-    ]
+      // ...mutate(population),
+      ...mutate(selection),
+      ...crossover(selection)
+      // ...crossover(population),
+    ];
 
     while (newPopulation.length < population.length) {
-      newPopulation.push(generate())
+      const result = generate();
+      // const result = random(population)();
+      newPopulation.push(result);
     }
 
-    population = newPopulation
+    population = newPopulation;
 
-    onIteration(counter, bestFitness, bestProgram)
+    onIteration(counter, bestFitness, bestProgram);
 
     if (stopWhen(counter, bestFitness)) {
-      return [ bestProgram, bestFitness ]
+      return [bestProgram, bestFitness];
     }
   }
-}
+};
